@@ -1,0 +1,64 @@
+<html style="height: 100%">
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- Google fonts -->
+        <!-- <link href="https://fonts.googleapis.com/css?family=Poiret+One|Raleway" rel="stylesheet"> -->
+
+        <!-- My CSS -->
+        <!-- <link rel="stylesheet" type="text/css" href="css/index.css"> -->
+
+        <!-- leaflet -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+        integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+        crossorigin=""/>
+
+        <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+        integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+        crossorigin=""></script>
+
+        <!-- for color markers -->
+        <script src="https://use.fontawesome.com/186244fe4f.js"></script>
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+        <link rel="stylesheet" href="Leaflet.awesome-markers/dist/leaflet.awesome-markers.css ">
+        <script src="Leaflet.awesome-markers/dist/leaflet.awesome-markers.js"></script>
+
+        <!-- my stuff -->
+        <script type="text/javascript" language="javascript" src="./data.js"></script>
+        <link rel="stylesheet" href="mycss.css">
+        <script type="text/javascript" language="javascript" src="./myjscompressed.js"></script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-md-8">
+                <h4>Find Affordable Housing in Austin, TX (filter by district; click on properties for info)</h4>
+                <div id="mapid" style="height: 600px;"></div>
+            </div>
+            <div class="col-md-4">
+                <br /><br />
+                <select id="select-district">
+                    <option vale="all">ALL</option>
+                    <option value="1">District 1</option>
+                    <option value="2">District 2</option>
+                    <option value="3">District 3</option>
+                    <option value="4">District 4</option>
+                    <option value="5">District 5</option>
+                    <option value="6">District 6</option>
+                    <option value="7">District 7</option>
+                    <option value="8">District 8</option>
+                    <option value="9">District 9</option>
+                    <option value="10">District 10</option>
+                </select>
+                <div><b>Total Affordable Housing:</b> <span id="AFI-Total"></span></div>
+                <div id="marker-info"></div>
+            </div>
+        </div>
+    </body>
+</html>
