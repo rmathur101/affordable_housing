@@ -10,6 +10,9 @@ var express = require("express");
 var body_parser = require("body-parser");
 var fs = require("fs");
 var _ = require("underscore");
+var passwords = require("./passwords").passwords;
+var os = require("os");
+// var content = require("./content").content;
 
 if (DEV) {
     var PORT = 8000;
@@ -19,6 +22,7 @@ if (DEV) {
 
 const app = express();
 app.use(express.static(__dirname + '/public/'));
+app.use(body_parser.urlencoded());
 
 // Listen on Port
 var server = app.listen(PORT, function(error) {
@@ -49,10 +53,54 @@ var htmlFile = "/Users/rmathur101/Desktop/WORKING_ON/MEETUPS/DATA_FOR_DEMOCRACY/
 
 var json_parser = body_parser.json();
 
+
 app.get("/", function(request, response) {
     response.sendFile(htmlFile);
 });
 
 app.get("/test", json_parser, function(request, response) {
     response.status(200).send("success");
+});
+
+app.post("/send_feedback", json_parser, function(req, res) {
+    // console.log(req.query);
+    // console.log(req.body);
+    var data = req.body;
+    data.date = new Date();
+    fs.appendFile("./feedback.txt", JSON.stringify(data) + os.EOL, function() {});
+    res.status(200).send("success");
+});
+
+function logUserData(data) {
+    var log = {data: data, date: new Date()};
+    fs.appendFile("./log.txt", JSON.stringify(log) + os.EOL, function() {});
+    return;
+}
+
+app.post("/log_data", json_parser, function(req, res) {
+    var body = req.body;
+    logUserData(body.data);
+    res.status(200);
+});
+
+app.post("/login", json_parser, function(req, res) {
+    var data = req.body;
+    console.log("what is post data?");
+    console.log(data);
+    var pass = data["pass"];
+    console.log("what is passwords?");
+    console.log(passwords);
+
+    if (_.contains(passwords, pass.toUpperCase())) {
+        console.log("success");
+        res.status(200).send("success");
+
+        logUserData("Login Success");
+
+    } else {
+        console.log("error");
+        res.status(500).send("error with passwords");
+
+        logUserData("Login Error");
+    }
 });

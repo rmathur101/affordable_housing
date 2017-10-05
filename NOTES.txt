@@ -1,0 +1,50 @@
+THOUGHTS
+    - so i have started to gather data about affordable housing data in Austin
+    - the big question is who is something like this going to be valuable to? well one relevant question is the data gets better when it is getting used. so i want to figure out what decisions will be used off of this data. what kinds of things can the government do? well overtime you can get an idea of how historical data and compare it to show people how it has been changing. but probs the relevant thing that the government can do is to decide to invest more or less money into affordable housing. it would be a good question to ask david king.
+    - but more than not it comes down to funding, and it probably also comes down passing ordinances that end up doing something, now, it is also true that part of this process is that gov helps the builders get permits for what they are trying to do, and then the builders build stuff, and then they find tenants that are supposed to pay less per month as it is supposed to be affordable housing, the question then is it is unsure of whether the housing is actually affordable or not, one way to do this would be a way for people to report through the application, directly to the government, if certain apartments did not provide for affordable, this could be useful for the government to know
+    - so the government is going to do the permitting process, another question is how does this permitting process looks for the government; how could i use the data that we have to make the permitting process better for the government this would depend on what the process looks like for the gov right now
+    - and then the government wants to connect homebuyuers or renters with the housing, so they want an app to connect them with it, this could be it
+    - but still trying to think of what data would be useful to them, data that helps them see the current situation, like it is immediatley helpful for them to see what districts are getting support and the like, right, so they can see what are the the district that need the most support, you can also aggregate the funding by district which would be interesting
+    - so for the data, what kind of data would be good for the gov to know, how much they are funding would be interesting, how many are already done would be good (as in not affordable anymore); relating the funding to kirwan property scores and stuff would be interesting in general (so if you get the funding at a district wide level that would be interesting); yea so the first kind of thing in terms of ease and effectiveness would be to get some more district wide metrics,
+        - you can pitch this to amy stansbury as something that austin-econetwork hosts on their site, or links from their site, and people can come to this and they can be central place for affordable housing, and then people can link to other services (partners include other non profits and stuff)
+        - consider asking the data dude about the MFI data accuracy
+        - perhaps do an average or a weighted thing where you give an overall opportunity score of various places in the district
+        - make the individual property put the opportunity score in green, or red or whatever as an indicator
+        - it's a good idea i think just to get the data into a place, and then decide how you want to represent it (pretty graphs and stuff, it allows you to more immediately draw conclusions)
+        - capture IP / login information and write that to file (and also write it during feedback)
+
+what if you think about this in terms of a function of others things, the availability of affordable housing is a function of a lot of things, including number of properties that are available for low income housing people, which is a function of how many of those properties are built, which is a function of how many builders apply for building affordable housing, which is a function of what benefits they are given, etc.; could be valuable to carry on this line of thinking
+
+TODO / ACTIONABLE
+    - look for historical housing data
+    - reach out to people at the city to give this to with the idea that you'd like to build out features if they are interested in added things
+    - ask 'david king' what kinds of things government can do to overcome this problem of affordable housing
+    - what does the permitting process look like on behalf of the government and the vendor?
+    - reach out to some of these companies that are big on this map (insert here), and contact them with some login to this app (sell with some value proposition to what you are doing right now and what you could be doing in the future)
+    - consider reaching out to news organizations that may be interested in this data; try to think of other various organizations that would find this data useful for them; e.g. austin eco network; can also consider talking to emily's lawyer friend from indeed who is on that immigrant commission or whatever
+    - what is affordability period?
+    - come up with theories about it's usage when you put it out there, compare the outcomes with the expecations that you had
+
+POSSIBLE USEFUL FEATURES / SELLING POINTS
+    - future tenants could use the app to search for housing, but if they are denied the rents that they want, then there would be a way to automatically send that information to the government, and because the government is tracking data about the housing itself, there would be a way to confirm whether or not the housing vendor is at fault
+
+FEATURES TO ADD NOW (when deciding try to think of what data would be relevant to the government)
+    - a way to see total city funding by district
+    - add a way to filter by Kirwan Opportunity index (low, very low, etc.)
+    - add a way to view Kirwan Opportunity Index, average scores based on district
+    - a way to see the top 10 developers / owners in terms of total properties by district
+    - a way to see top 10 developers / owners by funding by district
+    - add a login, so that you can track the people that are logging into the site and get a tap on what ips they are coming from
+    - a way to filter by affordability expiration date
+    - aggregate total units for a district / all district
+    - aggregate total units and have a breakdown by owner / vendor
+    - a way to see a break down by Program (RHDA - Rental Housing Developer Assistance, Acquisition and Development, Developer Incentive, etc.)
+    - filter by owner / renter units, with the ability to see aggregate scores for the district filter
+    - Filter by Status
+    - Consider automatically filtering out affordability start date
+    - consider filtering by affordability period, when you figure out what that is
+    - show data for % of funds leveraged, (consider aggregating for the district level as well)
+    - filter by multi family, single family, duplex etc., with the ability to aggregate these numbers at the district level as well
+    - filter by units that are relative to the MFI (medium family index); and along with that, be able to show aggregates of this data at the district level (would be interesting to match this with funding by government, or various owners and developers as well)
+
+- ask them what process they have for deciding where affordable housing will be built, what is the frequency of this?
