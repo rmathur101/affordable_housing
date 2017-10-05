@@ -17,21 +17,41 @@
 from pandas import DataFrame as DF
 import pandas as pd
 import json
+import datetime
 
 # r = requests.get('https://data.austintexas.gov/resource/2drp-3fg9.json')
 d = DF.from_csv("AHI_20170930.csv")
 d.reset_index(level=0, inplace=True)
-print len(d.columns)
+
+col = "Affordability Expiration Date"
+print d.shape
+print type(d["Affordability Expiration Date"])
+d[col] = pd.to_datetime(d[col])
+d = d[d["Affordability Expiration Date"] > datetime.date(2017, 10, 2)]
+print d.shape
+
+print "Market Rate Units"
+print d["Market Rate Units"].sum();
+
+print "Units <= 30% MFI"
+print d["Units <= 30% MFI"].sum();
+
+print "Units <= 40% MFI"
+print d["Units <= 40% MFI"].sum();
+
+print "Units <= 50% MFI"
+print d["Units <= 50% MFI"].sum();
+
+print "Units <= 60% MFI"
+print d["Units <= 60% MFI"].sum();
+
+print "Units <= 80% MFI"
+print d["Units <= 80% MFI"].sum();
 
 # d = d["Project Name"]
 # print d
-j =  d.to_json(orient="records")
-print j
+# j =  d.to_json(orient="records")
+# print j
 
-with open('data.json', 'w') as outfile:
-    json.dump(j, outfile)
-
-# di = json.loads(j)
-# print di[0]
-# print len(di[0].keys())
-# print d[:2]
+# with open('data.json', 'w') as outfile:
+    # json.dump(j, outfile)
