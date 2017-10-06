@@ -85,17 +85,17 @@ app.post("/log_data", json_parser, function(req, res) {
 
 app.post("/login", json_parser, function(req, res) {
     var data = req.body;
-    console.log("what is post data?");
-    console.log(data);
+    // console.log("what is post data?");
+    // console.log(data);
     var pass = data["pass"];
-    console.log("what is passwords?");
-    console.log(passwords);
+    // console.log("what is passwords?");
+    // console.log(passwords);
 
     if (_.contains(passwords, pass.toUpperCase())) {
         console.log("success");
         res.status(200).send("success");
 
-        logUserData("Login Success");
+        logUserData({success: "Login Success", code: pass.toUpperCase()});
 
     } else {
         console.log("error");

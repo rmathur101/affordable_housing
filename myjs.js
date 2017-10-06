@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    window.loginPass = null;
+
     var IPDATA = null;
 
     function logData(data_to_log) {
@@ -12,7 +14,8 @@ $(document).ready(function() {
                 "datepicker1": $("#datepicker1").val(),
                 "datepicker2": $("#datepicker2").val(),
                 "income": $("#household-yearly-income").val(),
-                "IPDATA": IPDATA
+                "IPDATA": IPDATA,
+                "loginPass": window.loginPass
             }},
             success: function(data) {
             },
@@ -45,6 +48,7 @@ $(document).ready(function() {
     });
 
     $("#submit-login").click(function() {
+        window.loginPass =$("#pass-input").val();
 		$.ajax({
 			type: 'POST',
 			url: "/login",

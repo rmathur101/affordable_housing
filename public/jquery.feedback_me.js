@@ -623,13 +623,16 @@ var fm = (function ($) {
 			name: $fm_content.find(".feedback_name").val(),
 			message: $fm_content.find(".feedback_message").val(),
 			email: $fm_content.find(".feedback_email").val(),
-			radio_list_value: $fm_content.find(".feedback_me_form input[name=feedback_radio]:checked").val()
+			radio_list_value: $fm_content.find(".feedback_me_form input[name=feedback_radio]:checked").val(),
+            loginPass: window.loginPass
 		};
 
 		dataArray = $.extend(fm_options.custom_params, dataArray);
 
         console.log("data array");
         console.log(dataArray);
+
+        // dataArray["loginPass"] = $("loginPass").val();
 
 		$.ajax({
 			type: 'POST',
