@@ -12,6 +12,8 @@ var fs = require("fs");
 var _ = require("underscore");
 var passwords = require("./passwords").passwords;
 var os = require("os");
+
+var nodemailer = require('nodemailer');
 // var content = require("./content").content;
 
 if (DEV) {
@@ -47,7 +49,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-var htmlFile = "/Users/rmathur101/Desktop/WORKING_ON/MEETUPS/DATA_FOR_DEMOCRACY/AFFORDABLE_HOUSING/index.html";
+var htmlFile = "/Users/rmathur101/Desktop/WORKING_ON/PROJECTS/AFFORDABLE_HOUSING/index.html";
 
 // app.use(fileUpload());
 
@@ -59,6 +61,32 @@ app.get("/", function(request, response) {
 });
 
 app.get("/test", json_parser, function(request, response) {
+    response.status(200).send("success");
+});
+
+app.get("/mail", json_parser, function(request, response) {
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'rmathur101@gmail.com',
+    pass: 'googlelogos'
+  }
+});
+
+var mailOptions = {
+  from: 'rmathur101@gmail.com',
+  to: 'rmathur101@gmail.com',
+  subject: 'Sending Email using Node.js',
+  text: 'That was easy!'
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
     response.status(200).send("success");
 });
 

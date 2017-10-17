@@ -506,27 +506,6 @@ $(document).ready(function() {
                 markers.addLayer(marker);
 
                 numTotal = numTotal + 1;
-                // if (!_.isUndefined(dd["Total Affordable Units"]) && dd["Total Affordable Units"] > 0) {
-                //     numAffordableUnits = numAffordableUnits + dd["Total Affordable Units"];
-                // }
-                // if (!_.isUndefined(dd["Market Rate Units"]) && dd["Market Rate Units"] >= 0) {
-                //     numMarketRateUnits = numMarketRateUnits + dd["Market Rate Units"];
-                // }
-                // if (!_.isUndefined(dd["Units <= 30% MFI"]) && dd["Units <= 30% MFI"] >= 0) {
-                //     numUnitsLess30 = numUnitsLess30 + dd["Units <= 30% MFI"];
-                // }
-                // if (!_.isUndefined(dd["Units <= 40% MFI"]) && dd["Units <= 40% MFI"] >= 0) {
-                //     numUnitsLess40 = numUnitsLess40 + dd["Units <= 40% MFI"];
-                // }
-                // if (!_.isUndefined(dd["Units <= 50% MFI"]) && dd["Units <= 50% MFI"] >= 0) {
-                //     numUnitsLess50 = numUnitsLess50 + dd["Units <= 50% MFI"];
-                // }
-                // if (!_.isUndefined(dd["Units <= 60% MFI"]) && dd["Units <= 60% MFI"] >= 0) {
-                //     numUnitsLess60 = numUnitsLess60 + dd["Units <= 60% MFI"];
-                // }
-                // if (!_.isUndefined(dd["Units <= 80% MFI"]) && dd["Units <= 80% MFI"] >= 0) {
-                //     numUnitsLess80 = numUnitsLess80 + dd["Units <= 80% MFI"];
-                // }
             }
         }
         mymap.addLayer(markers);
