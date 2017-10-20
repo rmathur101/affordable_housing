@@ -51,6 +51,8 @@ app.use(function (req, res, next) {
 
 var htmlFile = "/Users/rmathur101/Desktop/WORKING_ON/PROJECTS/AFFORDABLE_HOUSING/index.html";
 
+var htmlFile2 = "/Users/rmathur101/Desktop/WORKING_ON/PROJECTS/AFFORDABLE_HOUSING/index_2.html";
+
 // app.use(fileUpload());
 
 var json_parser = body_parser.json();
@@ -60,6 +62,18 @@ app.get("/", function(request, response) {
     response.sendFile(htmlFile);
 });
 
+
+app.get("/search", function(request, response) {
+    response.sendFile(htmlFile2);
+});
+
+app.get("/log_data_beta", function(res, req) {
+    var body = req.body;
+    logBetaData(body.data);
+    res.status(200);
+});
+
+
 app.get("/test", json_parser, function(request, response) {
     response.status(200).send("success");
 });
@@ -68,8 +82,6 @@ app.get("/mail", json_parser, function(request, response) {
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'rmathur101@gmail.com',
-    pass: 'googlelogos'
   }
 });
 
@@ -102,6 +114,12 @@ app.post("/send_feedback", json_parser, function(req, res) {
 function logUserData(data) {
     var log = {data: data, date: new Date()};
     fs.appendFile("./log.txt", JSON.stringify(log) + os.EOL, function() {});
+    return;
+}
+
+function logBetaData(data) {
+    var log = {data: data, date: new Date()};
+    fs.appendFile("./beta_log.txt", JSON.stringify(log) + os.EOL, function() {});
     return;
 }
 

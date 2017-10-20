@@ -1,0 +1,164 @@
+.filter-options {
+    background-color: #337ab7;
+    z-index: 1000;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 500px;
+    height: 640px;
+    margin-top: 120px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+    border-right: 3px solid white;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+    /*border-top-right-radius: 7px;*/
+    /*border-bottom-right-radius: 7px;*/
+    opacity: 0.8
+}
+
+.filter-options-banner {
+    background-color: #337ab7;
+    z-index: 1000;
+    top: 0px;
+    left: -500px;
+    position: absolute;
+    width: 50px;
+    height: 160px;
+    margin-top: 300px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+    border-right: 3px solid white;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+    /*border-top-right-radius: 7px;*/
+    /*border-bottom-right-radius: 7px;*/
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.top-header-title {
+    text-align: center;
+    padding-top: 21px;
+    margin-top: 0px;
+    font-size: 35px;
+    color: white;
+    font-weight: 200;
+    letter-spacing: 20;
+}
+
+.top-header {
+    background-color: #337ab7;
+    z-index: 1000;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    height: 80px;
+    margin-top: 0px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+    width: 100%;
+    /*border-right: 3px solid white;*/
+    /*border-top: 3px solid white;*/
+    border-bottom: 3px solid white;
+    /*border-right: 3px solid white;*/
+    /*border-left: 3px solid white;*/
+    /*border-top: 3px solid white;*/
+    /*border-top-right-radius: 7px;*/
+    /*border-bottom-right-radius: 7px;*/
+    opacity: 0.8
+}
+
+.search-btn {
+    width: 200px;
+    height: 60px;
+    margin-left: 109px;
+    letter-spacing: 4px;
+    border: 2px solid white;
+    border-radius: 0px;
+}
+
+.query-font {
+    color: white;
+    font-size: 23px;
+    font-weight: 300;
+}
+
+.query-font-small {
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.home-type-group {
+    /*padding: 10px;*/
+}
+
+.listing-details {
+    font-size: 19px;
+    border: 2px solid black;
+    background-color: rgb(51, 122, 183);
+    padding: 10 10 10 10;
+    font-weight: 300;
+}
+
+.listing {
+    border-radius: 0px;
+    border: 2px solid black;
+    color: white;
+    /*opacity: 0.8;*/
+}
+
+.clear-autocomplete {
+    width: 18px;
+    height: 14px;
+    font: 16px/14px Tahoma, Verdana, sans-serif;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: transparent;
+    cursor: pointer;
+    padding-right: 10px;
+}
+
+.clear-autocomplete:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.my-close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px 4px 0 0;
+    border: none;
+    text-align: center;
+    width: 18px;
+    height: 14px;
+    font: 16px/14px Tahoma, Verdana, sans-serif;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: transparent;
+    cursor: pointer;
+}
+
+.my-close-button:link {
+    text-decoration: none;
+}
+
+.my-close-button:visited {
+    text-decoration: none;
+}
+
+.my-close-button:hover {
+    text-decoration: none;
+}
+
+
+.my-close-button:active {
+    text-decoration: none;
+}
+
+
+
+.my-close-button:hover {
+    color: red;
+}

@@ -1,7 +1,6 @@
-
 <html style="height: 100%">
     <head>
-        <!-- Latest compiled and minified CSS -->
+        <!-- Latest compiled and minified CSS (bootstrap) -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
         <!-- jquery ui css -->
@@ -13,17 +12,11 @@
         <!-- jquery ui -->
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-        <!-- Latest compiled JavaScript -->
+        <!-- Latest compiled JavaScript (bootstrap)-->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <!-- underscore -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-
-        <!-- Google fonts -->
-        <!-- <link href="https://fonts.googleapis.com/css?family=Poiret+One|Raleway" rel="stylesheet"> -->
-
-        <!-- My CSS -->
-        <!-- <link rel="stylesheet" type="text/css" href="css/index.css"> -->
 
         <!-- leaflet -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
@@ -37,180 +30,169 @@
         <!-- for color markers -->
         <script src="https://use.fontawesome.com/186244fe4f.js"></script>
         <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
-        <link rel="stylesheet" href="Leaflet.awesome-markers/dist/leaflet.awesome-markers.css ">
+        <link rel="stylesheet" href="Leaflet.awesome-markers/dist/leaflet.awesome-markers.css">
         <script src="Leaflet.awesome-markers/dist/leaflet.awesome-markers.js"></script>
 
+        <!-- for high charts -->
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
         <!-- my stuff -->
         <script type="text/javascript" language="javascript" src="data.js"></script>
-        <link rel="stylesheet" href="mycss.css">
-        <!-- compressed -->
-        <!-- <script type="text/javascript" language="javascript" src="./myjscompressed.js"></script> -->
-        <!-- uncompressed -->
-        <script type="text/javascript" language="javascript" src="./myjs.js"></script>
+        <script type="text/javascript" language="javascript" src="search_script.js"></script>
 
         <!-- feedback jquery plugin -->
         <script type="text/javascript" language="javascript" src="./jquery.feedback_me.js"></script>
         <link rel="stylesheet" href="./jquery.feedback_me.css" />
 
+         <!-- bootstrap slider stuff -->
+        <link href="hack/bootstrap.min.css" rel="stylesheet">
+        <link href="hack/bootstrap-slider.css" rel="stylesheet">
+        <script type='text/javascript' src="hack/jquery.min.js"></script>
+        <script type='text/javascript' src="hack/bootstrap-slider.js"></script>
+
+        <link href="search_script.css" rel="stylesheet" />
+
         <!-- gcharts -->
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-        <!-- Global Site Tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694001-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3L1dcWmGP3OA-koWsfmKsqVuYe6jFTDM&libraries=places,geometry&callback=initAutocomplete" async defer></script>
 
-          gtag('config', 'UA-107694001-1');
-        </script>
-    </head>
+
+
+<!-- Latest compiled and minified CSS -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css"> -->
+
+<!-- Latest compiled and minified JavaScript -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script> -->
+
     <body>
-        <div id="login" style="margin-left: 30%; margin-top: 5%;">
-            <div>
-                <h1 style="color: blue;">Affordable Housing Inventory Austin, TX</h1>
-                <h3>Login: <input id="pass-input" placeholder="password goes here"/></h3>
-                <button class="btn btn-primary" id="submit-login">Submit</button>
-            </div>
-            <br /><br />
-            <div>
-                <img src="imgs/app_screenshot_2.png" style="height: 400px; width: 600px; border: 2px solid black" />
-            </div>
+        <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+        <div id="mapid" style="height: 100%; width: 100%;"></div>
+        <div class="top-header">
+            <h4 class="top-header-title">AFFORDABLE HOUSING AUSTIN</h4>
         </div>
-        <div id="main-app" style="display: none;" class="row">
-            <div class="col-sm-6">
+        <div class="filter-options">
+            <div style="margin-left: 30px;">
+                <!-- <u style="color: white;"><h1 style="color: white;">Tell us about yourself...</h1></u> -->
+                <a class="my-close-button">x</a>
 
-                <h4 style="margin-left: 20px;">AFFORDABLE HOUSING INVENTORY, AUSTIN TX </h4>
-                <div id="mapid" style="height: 650px; border: 2px solid black; margin-left: 20px"></div>
-                <small style="color: red; margin-left: 20px;">Click properties for more info!</small>
-                <br /><br />
-                <!-- <div style="margin-left: 20px; border: 2px solid black;">
-                    <span style="color: red;">NOTE ABOUT THE DATA</span>: Our data comes from <a href="https://data.austintexas.gov/Building-and-Development/Affordable-Housing-Inventory-AHI-/x5p7-qyuv" target="_blank">here</a>. There are known issues with the quality of this data and we want to work with the city to on its data integrity issues. For example, do districts 6 and 10 really not have ANY affordable housing right now? Ideally, we could connect to a real time database of affordable housing inventory so that we could gain real time insights about affordable housing in Austin and connect austinites with a robust inventory for their affordable housing needs. If you're on board or know someone who can help, leave a note in the Feedback!
-                </div>
-                <br /> -->
-                <div style="border: 2px solid black; margin-left: 20px;" id="developer_table">
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <br /><br />
-                <span><b>Districts: </b></span>
-                <select id="select-district">
-                    <option vale="all">ALL</option>
-                    <option value="1">District 1</option>
-                    <option value="2">District 2</option>
-                    <option value="3">District 3</option>
-                    <option value="4">District 4</option>
-                    <option value="5">District 5</option>
-                    <option value="6">District 6</option>
-                    <option value="7">District 7</option>
-                    <option value="8">District 8</option>
-                    <option value="9">District 9</option>
-                    <option value="10">District 10</option>
-                </select>
-                <br />
-                <span><b>Affordability Expiration Date Range: </b></span>
-                <input id ="datepicker1"></input>
-                <input id ="datepicker2"></input>
-                <br />
-                <span><b>Household Yearly Income: </b></span><input id="household-yearly-income" />
-                <span class="glyphicon glyphicon-info-sign" aria-hideen="true" data-toggle="tooltip" data-placement="bottom" style="color: blue; cursor: pointer;" title="Enter yearly income and click the search button to find properties that have at least 1 unit that fits your financial criteria. The MFI (median family income) assumed to be 80,000"></span>
-                <br />
-                <button id="search-matching-properties" class="btn btn-primary" style="margin-top: 10px;">Search Matching Properties</button>
-                <br />
-                <small><a href="" data-toggle="modal" data-target="#myModal" style="color: red;">What can I do with this application?</a></small>
-                <br />
-                <small><a href="" data-toggle="modal" data-target="#noteModal" style="color: red;">A note about data quality.</a></small>
-                <br /><br />
-                <img id="loader" src="./imgs/loader.gif" />
-                <div id="data-content" style="border: 2px solid black; margin-right: 50px;">
-                    <div style="margin-left: 50px">
-                        <div><u><h5>What is the state of affordable housing in this district?</h5></u></div>
-                        <div><b>Affordable Projects:</b> <span id="AFI-Total"></span></div>
-                        <div><b>Affordable Units (<= 80% MFI):</b> <span id="AFI-Affordable"></span></div>
-                        <div><b>Market Rate Units:</b> <span id="AFI-Market-Rate-Units"></span></div>
-                        <div><b>City Funding for Affordable Housing: </b>$<span id="city-funded-amount-total"></span></div>
-                    </div>
-
-                    <div id="chart_div" style="width: 350px;"></div>
-                    <div id="chart-kirwan" style="width: 350px;"></div>
-                    <div id="chart-program" style="width: 350px;"></div>
-                    <div style="margin-left: 50px">
-                        <span>
-                            <i>
-                                These are program thats that are responsible for creation / rention of affordable housing units.
-                            </i>
-                        </span>
-                        <br />
-                        <span><b>RRHDA</b>: Rental Housing Developer Assistance</span>
-                        <br />
-                        <span><b>A&D</b>: Acquistion and Development</span>
-                        <br />
-                        <span><b>Developer Incentive</b></span>
-                    </div>
-
-                    <br />
-                    <div id="marker-info"></div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Here are some ideas...</h5>
-              </div>
-              <div class="modal-body">
                 <div>
-                  1) compare districts by level of funding, number of affordable units, and opportunity for income groups
-                </div>
-                <br />
-                  <div>
-                      2) assess housing developers on usage of city funds and development of affordable units
-                  </div>
-                <br />
-                  <div>
-                      3) discover locations of affordable housing projects along with specific details about funding, status, and opportunity
-                  </div>
-                  <br />
+                    <!-- <br />
+                    <label class="query-font">What is the size of your household?</label>
+                    <br />
+                    <select id="family-size">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8 OR Above</option>
+                    </select>
+                    <br /><br /> -->
                     <div>
-                      4) find affordable housing that is compatible with yearly income
-                    </div>
-                <br />
-                  <div>
-                      5) make good investment decisions about where city funds go to maximize affordable housing that creates opportunity and serves a variety of income groups
-                  </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          </div>
-            </div>
-          </div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="noteModal" role="dialog" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <!-- <h5 class="modal-title">A note about this data</h5> -->
-              </div>
-              <div class="modal-body">
-                    <div>
-                        The data comes from the City of Austin. You can find it: <a href="https://data.austintexas.gov/Building-and-Development/Affordable-Housing-Inventory-AHI-/x5p7-qyuv" target="_blank">here</a>. There are known issues with the  data quality. For example, do districts 6 and 10 really not have ANY affordable housing right now? We don't know.
+                        <label class="query-font" >What type of home are you looking for?</label>
+                        <br />
+                        <div>
+                            <input class="home-type-group" data-home-type="any" type="checkbox" checked />
+                            <label class="query-font-small">Any</label>
+                        </div>
+                        <div>
+                            <input class="home-type-group" data-home-type="single-family" type="checkbox" />
+                            <label class="query-font-small">Single Family</label>
+                        </div>
+                        <div>
+                            <input class="home-type-group" type="checkbox" data-home-type="multi-family"  />
+                            <label class="query-font-small">Multi Family</label>
+                        </div>
+                        <div>
+                            <input class="home-type-group" data-home-type="duplex" type="checkbox"  />
+                            <label class="query-font-small">Duplex</label>
+                        </div>
                     </div>
                     <br />
-                     <div>
-                         We want to work with the city to improve the integrity of this data. We would connect this application to a real time database of affordable housing inventory. This would allow our city to gain real time insights and provide austinites with affordable housing they can rely on. If you're on board or know someone who can help, please leave a note in the Feedback!
-                     </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          </div>
+
+                    <div>
+                        <label class="query-font">Are you looking to own or rent?</label>
+                        <!-- <div>
+                            <input class="ownership" type="checkbox" data-ownership="any" checked />
+                            <label class="query-font-small">Either</label>
+                        </div> -->
+                        <div>
+                            <input type="checkbox" class="ownership" data-ownership="own" checked />
+                            <label class="query-font-small">Own</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="ownership" data-ownership="rent" checked />
+                            <label class="query-font-small">Rent</label>
+                        </div>
+
+                    </div>
+                    <br />
+
+                    <div>
+                        <label class="query-font" >What is your household's yearly income?</label>
+                        <div style="margin-left: 17px;">
+                            <input id="income-slider" data-provide="slider" data-slider-min="0" data-slider-max="100000" data-slider-step="5000" data-slider-value="0" data-slider-tooltip="always" data-slider-tooltip-position="bottom" />
+                        </div>
+                    </div>
+                    <br /><br />
+                    <br /><br />
+
+                    <label class="query-font" >What should be near to your home?</label>
+                    <div>
+                        <a class="clear-autocomplete">x</a>
+                        <!-- <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text" class="form-control" style="width: 303px; display: inline;"></input> -->
+                        <input id="autocomplete" placeholder="Example: work address" type="text" class="form-control" style="width: 303px; display: inline;"></input>
+                        <div style="display: inline;" id="search-radius-container">
+                            <select id="search-radius">
+                                <option>1</option>
+                                <option>3</option>
+                                <option>5</option>
+                                <option>7</option>
+                                <option>9</option>
+                                <option>11</option>
+                                <option>13</option>
+                                <option>15</option>
+                            </select>
+                            <span style="color: white; letter-spacing: 2;"> miles</span>
+                        </div>
+                    </div>
+                    <br /><br />
+
+
+
+                    <!-- Male<input type="radio" value="Male" />
+                    Female<input type="radio" value="Female" /> -->
+
+                    <!-- <br /><br /> -->
+                    <!-- <button style="width: 200px;" class="btn btn-success" id="next">Next</button> -->
+                    <button class="btn text-center search-btn" id="search">SEARCH</button>
+                    <!-- <button id="research" style="width: 200px; display: none;" class="btn btn-warning">RESEARCH</button> -->
+                    <br /><br />
+                    <div>
+                        <input type="checkbox" id="display-matches" checked />
+                        <label class="query-font-small"><small>Display non-matching homes on map in red</small></label>
+                    </div>
+                </div>
             </div>
-          </div>
+        </div>
+        <div class="filter-options-banner">
+            <div style="margin-left: 19px; color: white; padding-top: 20px;">
+                <span>S</span>
+                <br />
+                <span>E</span>
+                <br />
+                <span>A</span>
+                <br />
+                <span>R</span>
+                <br />
+                <span>C</span>
+                <br />
+                <span>H</span>
+            </div>
         </div>
     </body>
 </html>
