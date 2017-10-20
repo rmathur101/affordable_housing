@@ -49,9 +49,13 @@ app.use(function (req, res, next) {
     next();
 });
 
-var htmlFile = "/Users/rmathur101/Desktop/WORKING_ON/PROJECTS/AFFORDABLE_HOUSING/index.html";
-
-var htmlFile2 = "/Users/rmathur101/Desktop/WORKING_ON/PROJECTS/AFFORDABLE_HOUSING/index_2.html";
+if (DEV) {
+    var htmlFile = "/Users/rmathur101/Desktop/WORKING_ON/PROJECTS/AFFORDABLE_HOUSING/index.html";
+    var htmlFile2 = "/Users/rmathur101/Desktop/WORKING_ON/PROJECTS/AFFORDABLE_HOUSING/index_2.html";
+} else {
+    var htmlFile = "/home/ubuntu/affordable_housing/index.html";
+    var htmlFile2 = "/home/ubuntu/affordable_housing/index_2.html"
+}
 
 // app.use(fileUpload());
 

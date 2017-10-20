@@ -194,10 +194,6 @@ function getAddressRadius() {
 
 function doSearch(data, map, markers) {
     return function() {
-        if (!atLeastOneSearch) {
-            atLeastOneSearch = true;
-            $(".my-close-button").click();
-        }
         removeMarkers(map, markers);
         var searchOpts = getSearchOptions();
         markers = renderMarkers(data, map, null, searchOpts);
@@ -229,6 +225,12 @@ function doSearch(data, map, markers) {
                 map.addLayer(circle);
         }
         logData("SEARCH CLICKED");
+
+        if (!atLeastOneSearch) {
+            atLeastOneSearch = true;
+            $(".filter-options").animate({left: '-500px'}, {queue: true, duration: 750});
+            $(".filter-options-banner").animate({left: '0px'}, {queue: true, duration: 750});
+        }
     }
 };
 
@@ -559,9 +561,9 @@ function markerOnClick() {
 
     div += '<img style="width: 100px; display: block; margin: auto;" src="house.png"></img>';
 
-    div += '<br/> <div class="listing-details" style="width: 265px;">Project Name: ' + marker["Project Name"] + '<br />Address: ' + marker["Address"] +'<br />Type: ' + marker["Housing Type"] +'<br />Unit: ' + marker["Unit Type"] +'<br />Bus Stop:' + marker["Distance to Bus Stop"] +'</div>';
+    div += '<br/> <div class="listing-details" style="width: 240px;">Project Name: ' + marker["Project Name"] + '<br />Address: ' + marker["Address"] +'<br />Type: ' + marker["Housing Type"] +'<br />Unit: ' + marker["Unit Type"] +'<br />Bus Stop:' + marker["Distance to Bus Stop"] +'</div>';
 
-    div += '<br/><button class="btn search-btn btn-success" style="border: 2px solid black; display: block; margin: auto; width: 265px;">CONTACT</button>'
+    div += '<br/><button class="btn search-btn btn-success" style="border: 2px solid black; display: block; margin: auto; width: 240px;">CONTACT</button>'
 
     // if (marker["Project Name"]) {
     //     div += '<div><b style="color: '+color+';">Project Name: </b>' + marker["Project Name"] + '</div>'
