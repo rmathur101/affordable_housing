@@ -67,7 +67,7 @@ app.get("/search", function(request, response) {
     response.sendFile(htmlFile2);
 });
 
-app.get("/log_data_beta", function(res, req) {
+app.post("/log_data_beta", function(req, res) {
     var body = req.body;
     logBetaData(body.data);
     res.status(200);

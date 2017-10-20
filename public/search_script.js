@@ -12,23 +12,24 @@ var circle;
 var atLeastOneSearch = false;
 var IPDATA;
 
-function logData(desc, extraData=""){
+function logData(desc, extraData){
     $.ajax({
         type: 'POST',
         url: "/log_data_beta",
         data: {"data": {
             "IPDATA": IPDATA,
-            "anyHouseType": $("[data-home-type]='any'").prop("checked"),
-            "singleFamily": $("[data-home-type]='single-family'").prop("checked"),
-            "multiFamily": $("[data-home-type]='multi-family'").prop("checked"),
-            "duplex": $("[data-home-type]='duplex'").prop("checked"),
-            "own": $("[data-ownership]='own'").prop("checked"),
-            "rent": $("[data-ownership]='rent'").prop("checked"),
+            "anyHouseType": $("[data-home-type='any']").prop("checked"),
+            "singleFamily": $("[data-home-type='single-family']").prop("checked"),
+            "multiFamily": $("[data-home-type='multi-family']").prop("checked"),
+            "duplex": $("[data-home-type='duplex']").prop("checked"),
+            "own": $("[data-ownership='own']").prop("checked"),
+            "rent": $("[data-ownership='rent']").prop("checked"),
             "householdIncome": $("#income-slider").val(),
             "address": $("#autocomplete").val(),
             "radius": $("#search-radius").val(),
             "displayRed": $("#display-matches").prop("checked"),
-            "extraData": extraData
+            "extraData": extraData,
+            "DESC": desc
         }},
         success: function(data) {
         },
@@ -163,6 +164,7 @@ $(document).ready(function() {
         type: "GET",
         url:"https://freegeoip.net/json/?callback",
         success: function(data) {
+            console.log("something");
             IPDATA = data;
             logData("PAGE VISIT");
         }, error: function() {}
@@ -226,6 +228,7 @@ function doSearch(data, map, markers) {
                 circle = new L.Circle(circleLocation, r, circleOptions);
                 map.addLayer(circle);
         }
+        logData("SEARCH CLICKED");
     }
 };
 
@@ -556,22 +559,9 @@ function markerOnClick() {
 
     div += '<img style="width: 100px; display: block; margin: auto;" src="house.png"></img>';
 
-    div += `
-        <br/>
-        <div class="listing-details" style="width: 265px;">
-            Project Name: ${marker["Project Name"]}
-            <br />
-            Address: ${marker["Address"]}
-            <br />
-            Type: ${marker["Housing Type"]}
-            <br />
-            Unit: ${marker["Unit Type"]}
-            <br />
-            Bus Stop: ${marker["Distance to Bus Stop"]}
-        </div>
-    `;
+    div += '<br/> <div class="listing-details" style="width: 265px;">Project Name: ' + marker["Project Name"] + '<br />Address: ' + marker["Address"] +'<br />Type: ' + marker["Housing Type"] +'<br />Unit: ' + marker["Unit Type"] +'<br />Bus Stop:' + marker["Distance to Bus Stop"] +'</div>';
 
-    div += `<br/><button class="btn search-btn btn-success" style="border: 2px solid black; display: block; margin: auto; width: 265px;">CONTACT</button>`
+    div += '<br/><button class="btn search-btn btn-success" style="border: 2px solid black; display: block; margin: auto; width: 265px;">CONTACT</button>'
 
     // if (marker["Project Name"]) {
     //     div += '<div><b style="color: '+color+';">Project Name: </b>' + marker["Project Name"] + '</div>'
@@ -613,5 +603,7 @@ function markerOnClick() {
     $(".leaflet-popup-close-button").hover(function(e) {
         $(this).css("color", e.type == "mouseenter" ? "red" : "black");
     });
+
+    logData("MARKER CLICKED", marker);
     // $("#marker-info").html(div);
 }
