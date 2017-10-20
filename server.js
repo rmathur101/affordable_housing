@@ -63,7 +63,7 @@ app.get("/", function(request, response) {
 });
 
 
-app.get("/search", function(request, response) {
+app.get("/app", function(request, response) {
     response.sendFile(htmlFile2);
 });
 
