@@ -136,6 +136,22 @@ $(document).ready(function() {
         $("#autocomplete").val("");
     });
 
+    if (false) {
+        var list = [2, 3, 4, 5, 6, 7];
+        $("#chatbot").toggle(true);
+        $(".filter-options").toggle(false);
+        $(".chatbot-next").click(function() {
+            $(".padding-20").toggle(false);
+            var num = list.shift();
+            if (num == 7) {
+                $("#chatbot").toggle(false);
+                $(".filter-options").toggle(true);
+            } else {
+                $("[data-chatbot='"+num+"']").toggle(true);
+            }
+        });
+    }
+
 
 
     showResearch(false);
@@ -162,10 +178,13 @@ $(document).ready(function() {
 
     $.ajax({
         type: "GET",
-        url:"https://freegeoip.net/json/?callback",
+        url:"http://ip-api.com/json",
+        // crossDomain: true,
+        // dataType: "jsonp",
         success: function(data) {
-            console.log("something");
+            // console.log("something");
             IPDATA = data;
+            console.log(data);
             logData("PAGE VISIT");
         }, error: function() {}
     });

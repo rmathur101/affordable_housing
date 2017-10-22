@@ -39,7 +39,7 @@
 
         <!-- my stuff -->
         <script type="text/javascript" language="javascript" src="data.js"></script>
-        <script type="text/javascript" language="javascript" src="search_script.js"></script>
+        <script type="text/javascript" language="javascript" src="search_script_compressed.js"></script>
 
         <!-- feedback jquery plugin -->
         <script type="text/javascript" language="javascript" src="./jquery.feedback_me.js"></script>
@@ -72,8 +72,71 @@
         <div class="top-header">
             <h4 class="top-header-title">AFFORDABLE HOUSING AUSTIN</h4>
         </div>
+
+        <div id="chatbot" style="display: none;">
+                <div class="padding-20" data-chatbot="1">
+                    <div>
+                        <span class="query-font">Welcome to Austin Affordable Housing. We're here to assist you in finding an affordable home in Austin, TX. To start let's learn a little about you.</span>
+                    </div>
+                    <br />
+                    <label class="query-font">Name: </label>
+                    <input class="form-control" />
+                    <br />
+                    <label class="query-font">Email: </label>
+                    <input class="form-control" />
+                    <br />
+                    <button class="btn btn-success btn-block chatbot-next">NEXT</button>
+                </div>
+                <div class="padding-20 none" data-chatbot="2">
+                    <label class="query-font">How many years have you been in Austin? </label>
+                    <input type="number" class="form-control" />
+                    <br />
+                    <button class="btn btn-success btn-block chatbot-next">NEXT</button>
+                </div>
+                <div class="padding-20 none" data-chatbot="3">
+                    <label class="query-font">What is your job title? </label>
+                    <input class="form-control" />
+                    <br />
+                    <button class="btn btn-success btn-block chatbot-next">NEXT</button>
+                </div>
+                <div class="padding-20 none" data-chatbot="4">
+                    <label class="query-font">Do you have any children in your household?</label>
+                    <br />
+                    <input type="radio" />
+                    <label class="query-font">Yes</label>
+                    <input type="radio" />
+                    <label class="query-font">No</label>
+                    <br />
+                    <button class="btn btn-success btn-block chatbot-next">NEXT</button>
+                </div>
+                <div class="padding-20 none" data-chatbot="5">
+                    <label class="query-font">Do you have any seniors in your household?</label>
+                    <br />
+                    <input type="radio" />
+                    <label class="query-font">Yes</label>
+                    <input type="radio" />
+                    <label class="query-font">No</label>
+                    <br />
+                    <button class="btn btn-success btn-block chatbot-next">NEXT</button>
+                </div>
+                <div class="padding-20 none" data-chatbot="6">
+                    <label class="query-font">We collect demographic information so that we can ensure fair housing for all. Please share the following information if you don't mind. </label>
+                    <br />
+                    <label class="query-font">Age</label>
+                    <input class="form-control" />
+                    <br />
+                    <label class="query-font">Gender</label>
+                    <input class="form-control" />
+                    <br />
+                    <label class="query-font">Ethnicity</label>
+                    <input class="form-control" />
+                    <br />
+                    <button class="btn btn-success btn-block chatbot-next">NEXT</button>
+                </div>
+        </div>>
+
         <div class="filter-options">
-            <div style="margin-left: 30px;">
+            <div style="margin-left: 30px; margin-top: 21px;">
                 <!-- <u style="color: white;"><h1 style="color: white;">Tell us about yourself...</h1></u> -->
                 <a class="my-close-button">x</a>
 
