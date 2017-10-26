@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "affordable-housing-22a06",
+  "private_key_id": "8ca072fe99f34a027da27a4b9e68bc2576127f9a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC5QagwlHyHW+Ud\nADoofgsvdjxuglos6Jfas4uFBmzUIOEGudo2b71nLOKjDOSR1FulHjsP3IA32qIw\nF0nHTaoSl2KMVhkej4C/fqdaGuqFwNYHJ9A2CmvzLYNqkanc9IkH/0/AJooMubOs\nRdV8B1zvA8SyB5ZmGb1B/leQvM21rl/CyIBRP4bj+riubDC4tmuVUBd4GwFaBEg4\ngU5aOrODTH6eRC37dbMUTrWQayJLGyes64xTcpYV9ynIXJzTSFbm5k4Lu9CCewzv\nt6lPy0PZ+sRIMe75XDij2AqFw4PjAogPfN28WsxGlJ2TctM65ARBouFmf3mkgmYi\nhx0yiAJvAgMBAAECggEAGV2GtzVy4jW65oBOy5c2gNvM5R9ZVCd6Df/iF+dhT0o7\n2r09G5Grz/ddW2Xl20ca+pNrvX2Q22pG0BQ1jeHHFPSVZxGthCRcmduwSQNryRSL\njunsoE7yU5blFNpiSlamdz8wnuan+vC89oGOptol5166DTDsxDNnWSSHaNHxI0bu\nhx+7a/gd+kgdIZ5mRCyKJ8ii0mkfIkw2rFNK6fd6UHPjiujFmnEUpSlYBdr9Otm/\n/dWgu6QWHmyaVY8sOv1zJxxNyG3hiffpWoFMzIHUbwEY7v55g7Oro4KMQOvXR5Z1\n9/LxFeSM+ChwzsqzsXmURxRYujzN45l3gjHj3WaNgQKBgQDkTKGzS1lF/72Hdd3F\nabAcaxOj4KoDxdAD9Q6L9d/osqnvoQWL8clhlHKerDijKXPl5GLmi+BsNlYTCV5C\nEtKqVXb/FMNF152yQjfFR6Xho2uyBUflgPNI2dfOZqafr11TvnI7V/nXsjIptIm0\nA02XAEFv9V5cIkBNuoSPwzYbJwKBgQDPvApGfSnoHfXFwBnyupgLfCr0m5bVPIsx\n/VM1f8AUw5nZC/TmQ3QMF0+UNqe4QEP4m95GfqCk5RrxaBIB6G2pswAYliwQ3z2S\nwPnJUK/RQxshoFqd6TyaObvsmQ/gYEqDjvFFZuFxvprzUnKswPwhT73Oct+b8A5Z\npvZIh3GLeQKBgFxnX/OQBdw9PNs9K7whoPR/qn1kC6xnPmC7qV2g8TXgSsQA6pvQ\nC3CBgzsR/gKcXpqoLBegef+Sppgh7JLVx4rF+NoZ70evk9Z40tX4v/1qBccSOB1+\nafoMojqadcqgUif5J4c5fph9OayDtFC2HYuGwPWt3Llx65EKc2k03At1AoGAdIDe\nNmgt34sl8nDpXJM/gHlz0dmMvyyEWFXdm8x42mxU1UB6acV8yOct706zw4bvV/d6\nsoiD6da/xJH8P2uuTRUhwag/MHszGiH2NOx2nmMHTVWUXKmZHlmwxmGVYN5ADAZX\n0/d+Cn++gSZFQBO/k6MYLTeJpvf75FXaHBUyHekCgYApYSLkkOdQ38NhQCzIGWYS\nqHXwsX86gWQp8l7wkJvzfZruupMOv5s4BgBp6YjrgsCeF2l5PIQ0N65UiOqf0rNH\n9K18bvinDNrW9+hkMQTq2fkzfxvANyD1ViNrU1nVsa8IUxWCEIbKr9fmeR46gs8v\nhD+gaQP9XomgMoTjY/N7xA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-yk4nx@affordable-housing-22a06.iam.gserviceaccount.com",
+  "client_id": "112064338717646166210",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-yk4nx%40affordable-housing-22a06.iam.gserviceaccount.com"
+}
