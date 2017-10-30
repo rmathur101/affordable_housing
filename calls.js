@@ -114,7 +114,7 @@ var makeResponse3 = function(req, res) {
 var makeResponseClose = function() {
 	var twiml = new VoiceResponse();
 	twiml.say(langOpts,
-		",,,,,Excellent. Thank you for your time. Citizens of Austin are grateful to have a reliable source of affordable housing. If you are interested in learning more about the state of affordable housing in Austin Texas, please visit www.austin affordable housing.com /app. Have a great day."
+		",,,,,Excellent. Thank you for your time. Citizens of Austin are grateful to have a reliable source of affordable housing. If you are interested in learning more about the state of affordable housing in Austin Texas, please visit www.austin affordable housing.com /app. Have a great day.")
 	return twiml;
 }
 

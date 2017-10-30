@@ -1,5 +1,22 @@
 $(document).ready(function() {
 
+	var IPDATA;
+
+	function logData(desc, extraData){
+	    $.ajax({
+	        type: 'POST',
+	        url: "/log_data_beta",
+	        data: {"data": {
+	            "IPDATA": IPDATA,
+	            "DESC": desc
+	        }},
+	        success: function(data) {
+	        },
+	        error: function() {
+	        }
+	    });
+	}
+
 	// Initialize Firebase
 	var config = {
 		apiKey: "AIzaSyBwsn2sANIn-bow0TfgUEPKfTI9nv1rkmw",
@@ -87,7 +104,23 @@ $(document).ready(function() {
 		}
 	});
 
+    $.ajax({
+        type: "GET",
+        url:"http://ip-api.com/json",
+        // crossDomain: true,
+        // dataType: "jsonp",
+        success: function(data) {
+            // console.log("something");
+            IPDATA = data;
+            console.log(data);
+            logData("PAGE VISIT TEST CALLS");
+        }, error: function() {}
+    });
+
 	$("#test-call").click(function() {
+
+        logData("TEST CALL");
+
 		var one = $("#first").val();
 		var second = $("#second").val();
 		var third = $("#third").val();
