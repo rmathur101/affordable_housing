@@ -107,12 +107,17 @@ $(document).ready(function() {
 				success: function(data) {
 					console.log("success from test_call");
 					console.log(data);
-					$("#test-call").toggle(true);
-					$("#loader").toggle(false);
+					setTimeout(function() {
+						$("#loader").toggle(false);
+						$("#test-call").toggle(true);
+					}, 5000)
 				},
 				error: function(data) {
-					$("#test-call").toggle(true);
-					$("#loader").toggle(false);
+					// $("#test-call").toggle(true);
+					setTimeout(function() {
+						$("#loader").toggle(false);
+						$("#test-call").toggle(true);
+					}, 5000)
 				}
 			});
 		}

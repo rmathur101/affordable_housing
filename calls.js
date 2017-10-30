@@ -35,6 +35,8 @@ var makeResponse1 = function(req, res) {
 	// console.log("what is this number?");
 	// console.log(called);
 
+	console.log("inside of makeResponse 1");
+
 	// update received calls
 	ref.child(called).once("value", function(data) {
 		var data = data.val();
@@ -57,7 +59,7 @@ var makeResponse1 = function(req, res) {
 		}
 	);
 	gather.say(langOpts,
-		"Hello from Austin Affordable Housing. We are calling to update our Affordable Housing Records. Our records show that your property provides income restricted units. Please press 1 if your property has any income restricted units. Or, press 0 if your property DOES NOT provide income restricted units. Then, press pound to continue."
+		",,,,,Hello from Austin Affordable Housing. We are calling to update our Affordable Housing Records. Our records show that your property provides income restricted units. If your property provides income restricted units, press 1 followed by the pound key. Or, if your property DOES NOT provide income restricted units, press 0 followed by the pound key."
 	);
 
 	res.writeHead(200, {"Content-Type": "text/xml"});
@@ -87,7 +89,7 @@ var makeResponse2 = function(req, res) {
 			}
 		);
 		gather.say(langOpts,
-			"How many income restricted units are currently available for rent or purchase? Please input the number of units on your keypad. Then, press pound to continue."
+			",,,,,How many income restricted units are currently available for rent or purchase? Please input the number of units on your keypad, followed by the pound key."
 		);
 	}
 
@@ -112,8 +114,7 @@ var makeResponse3 = function(req, res) {
 var makeResponseClose = function() {
 	var twiml = new VoiceResponse();
 	twiml.say(langOpts,
-		"Excellent. Thank you for your time. Citizens of Austin are grateful to have a reliable source of affordable housing. If you are interested in learning more about the state of affordable housing in Austin Texas, please visit www.austinaffordablehousing.com/app.  Have a great day."
-	);
+		",,,,,Excellent. Thank you for your time. Citizens of Austin are grateful to have a reliable source of affordable housing. If you are interested in learning more about the state of affordable housing in Austin Texas, please visit www.austin affordable housing.com /app. Have a great day."
 	return twiml;
 }
 
